@@ -21,6 +21,7 @@ public class PrincipalMain {
         Scanner read = new Scanner(System.in);
         int option;
         boolean exit = false;
+        System.out.println("Hola git");
 
         while (!exit) {
 
