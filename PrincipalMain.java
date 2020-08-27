@@ -12,7 +12,7 @@ public class PrincipalMain {
 
     public static void main(String[] args) {
 
-        String file = System.getenv("Moviefile");
+
         ReadFile readFile = new ReadFile();
         ViewMostImdb viewOption = new ViewMostImdb();
         ViewShowNetflix viewShowNetflix = new ViewShowNetflix();
@@ -47,7 +47,7 @@ public class PrincipalMain {
                     switch (option) {
                         case 1:
 
-                            readFile.read(file);
+                            readFile.read();
                             viewOption.mostImdb();
 
                             break;
@@ -74,7 +74,7 @@ public class PrincipalMain {
 
                     switch (option) {
                         case 1:
-                            readFile.read(file);
+                            readFile.read();
                             viewShowNetflix.showNetflix();
                             break;
                             /*case 2:

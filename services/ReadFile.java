@@ -13,9 +13,10 @@ import java.nio.file.Paths;
 
 public class ReadFile  {
 
-    CSVParser csvParser = null;
+    CSVParser csvParser ;
+    String file = System.getenv("Moviefile");
 
-    public  void read(String file) {
+    public  void read() {
 
 
        try {
@@ -38,6 +39,7 @@ public class ReadFile  {
    }
 
     public CSVParser getCsvParser() {
+
         return csvParser;
     }
 

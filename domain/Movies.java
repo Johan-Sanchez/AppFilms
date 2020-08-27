@@ -30,21 +30,12 @@ public class Movies {
 
     public List<MoviesDescription> getMovies() {
 
-
-            instance.llenarLista();
-            return instance.movies;
-
-    }
-
-
-    private boolean llenarLista() {
-
         ReadFile reads = new ReadFile();
         MoviesDescription movie;
 
         if (reads.getCsvParser() == null) {
 
-            return false;
+            return null;
 
         } else {
 
@@ -57,23 +48,20 @@ public class Movies {
 
                 movies.add(movie);
 
-                try {
-                    reads.getCsvParser().close();
 
-                } catch (IOException e) {
-
-                    e.printStackTrace();
-                }
 
             }
-            return true;
+            return movies;
 
         }
+
 
 
     }
 
 }
+
+
 
 
 
