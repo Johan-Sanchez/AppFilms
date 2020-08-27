@@ -1,11 +1,9 @@
 package edu.learning.johan.app.utils;
 
 import edu.learning.johan.app.domain.MoviesDescription;
-import edu.learning.johan.app.reader.ReadFile;
+import edu.learning.johan.app.services.ReadFile;
 
-import java.util.Comparator;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class MovieUtil extends ReadFile {
 
