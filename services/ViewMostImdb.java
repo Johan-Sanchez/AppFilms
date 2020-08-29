@@ -10,13 +10,13 @@ public class ViewMostImdb {
 
         movies = Movies.getInstance();
 
-        movies.getMovies().stream().map(m->m.getImdb())
+       /* movies.getMovies().stream().map(m->m.getImdb())
                 //.filter(moviesDescription -> !moviesDescription.getImdb().isBlank())
                 //.filter(moviesDescription -> moviesDescription.getImdb().equals("9.0"))
                 //.peek(v-> System.out.println(v.getImdb()))
                 // .map(MoviesDescription::getTitle)
                 //.sorted()
-                .forEach(System.out::println);
+                .forEach(System.out::println); */
 
         System.out.println("");
 
@@ -24,6 +24,8 @@ public class ViewMostImdb {
 
                 //.map(Double::parseDouble)
                 // .sorted(Comparator.reverseOrder())
+                .map(moviesDescription ->moviesDescription.getTitle() )
+
                 .limit(10)
                 .forEach(System.out::println);
 

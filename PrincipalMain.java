@@ -74,7 +74,7 @@ public class PrincipalMain {
 
                     switch (option) {
                         case 1:
-                            readFile.read();
+                            //readFile.read();
                             viewShowNetflix.showNetflix();
                             break;
                             /*case 2:

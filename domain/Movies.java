@@ -11,6 +11,7 @@ import org.apache.commons.csv.CSVRecord;
 public class Movies {
 
     private List<MoviesDescription> movies = new ArrayList<>();
+    private MoviesDescription movie ;
 
     private static Movies instance = null;
 
@@ -31,8 +32,8 @@ public class Movies {
     public List<MoviesDescription> getMovies() {
 
         ReadFile reads = new ReadFile();
-        MoviesDescription movie;
 
+            reads.read();
         if (reads.getCsvParser() == null) {
 
             return null;

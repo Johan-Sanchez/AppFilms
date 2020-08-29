@@ -10,8 +10,9 @@ public class ViewShowNetflix {
     public  void showNetflix(){
 
         movies = Movies.getInstance();
+        
 
-        movies.getMovies().stream().filter(n-> n.getNetflix().equals(("1"))).map(MoviesDescription::getTitle).forEach(System.out::println);
+        movies.getMovies().stream().filter(n-> !n.getNetflix().equals("1")).map(MoviesDescription::getTitle).forEach(System.out::println);
 
     }
 }
