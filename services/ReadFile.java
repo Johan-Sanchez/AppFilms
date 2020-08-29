@@ -1,10 +1,8 @@
-package edu.learning.johan.app.reader;
+package edu.learning.johan.app.services;
 
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-
 
 
 import java.io.IOException;
@@ -15,9 +13,10 @@ import java.nio.file.Paths;
 
 public class ReadFile  {
 
-    CSVParser csvParser = null;
+    CSVParser csvParser ;
+    String file = System.getenv("Moviefile");
 
-    public  void read(String file) {
+    public  void read() {
 
 
        try {
@@ -40,6 +39,7 @@ public class ReadFile  {
    }
 
     public CSVParser getCsvParser() {
+
         return csvParser;
     }
 

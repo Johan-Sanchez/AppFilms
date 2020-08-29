@@ -1,27 +1,27 @@
 package edu.learning.johan.app;
 
 
-import edu.learning.johan.app.domain.ViewOption;
-import edu.learning.johan.app.reader.ReadFile;
+import edu.learning.johan.app.services.ReadFile;
+import edu.learning.johan.app.services.ViewMostImdb;
+import edu.learning.johan.app.services.ViewShowNetflix;
+import edu.learning.johan.app.domain.Movies;
 
-import javax.print.DocFlavor;
-import javax.swing.*;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class PrincipalMain {
 
     public static void main(String[] args) {
 
-        String file = System.getenv("Moviefile");
+
         ReadFile readFile = new ReadFile();
-        ViewOption viewOption = new ViewOption();
+        ViewMostImdb viewOption = new ViewMostImdb();
+        ViewShowNetflix viewShowNetflix = new ViewShowNetflix();
 
 
         Scanner read = new Scanner(System.in);
         int option;
         boolean exit = false;
-        System.out.println("Hola git");
+
 
         while (!exit) {
 
@@ -47,14 +47,14 @@ public class PrincipalMain {
                     switch (option) {
                         case 1:
 
-                            readFile.read(file);
+                            readFile.read();
                             viewOption.mostImdb();
 
                             break;
-                        case 2:
+                       /*  case 2:
                             readFile.read(file);
-                            viewOption.mostRotten();
-                            break;
+                            viewOption.mostImdb();
+                            break;*/
                     }
                     break;
 
@@ -74,8 +74,8 @@ public class PrincipalMain {
 
                     switch (option) {
                         case 1:
-                            readFile.read(file);
-                            viewOption.showNetflix();
+                            //readFile.read();
+                            viewShowNetflix.showNetflix();
                             break;
                             /*case 2:
                                 ReadFile.read(file);
