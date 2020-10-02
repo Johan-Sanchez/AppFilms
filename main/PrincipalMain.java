@@ -1,10 +1,6 @@
-package edu.learning.johan.app;
+package edu.learning.johan.app.main;
 
-
-import edu.learning.johan.app.services.ReadFile;
-import edu.learning.johan.app.services.ViewMostImdb;
-import edu.learning.johan.app.services.ViewShowNetflix;
-import edu.learning.johan.app.domain.Movies;
+import edu.learning.johan.app.services.MovieService;
 
 import java.util.Scanner;
 
@@ -12,11 +8,7 @@ public class PrincipalMain {
 
     public static void main(String[] args) {
 
-
-        ReadFile readFile = new ReadFile();
-        ViewMostImdb viewOption = new ViewMostImdb();
-        ViewShowNetflix viewShowNetflix = new ViewShowNetflix();
-
+        MovieService service = new MovieService();
 
         Scanner read = new Scanner(System.in);
         int option;
@@ -33,7 +25,8 @@ public class PrincipalMain {
             System.out.println("1. Top ten most rated movies");
             System.out.println("2. Worst ten most rated movies");
             System.out.println("3. Movies by provider");
-            System.out.println("4. Exit");
+            System.out.println("4. Statistics for provider");
+            System.out.println("5. Exit");
             System.out.println("");
             option = read.nextInt();
 
@@ -46,20 +39,29 @@ public class PrincipalMain {
                     option = read.nextInt();
                     switch (option) {
                         case 1:
-
-                            readFile.read();
-                            viewOption.mostImdb();
+                            service.topTenImdb();
 
                             break;
-                       /*  case 2:
-                            readFile.read(file);
-                            viewOption.mostImdb();
-                            break;*/
+                        case 2:
+                            service.topTenRotten();
+                            break;
                     }
                     break;
 
                 case 2:
                     System.out.println("Ten least viewed movies");
+                    System.out.println("Select the option");
+                    System.out.println("1. By IMDb");
+                    System.out.println("2. By Rotten Tomatoes");
+                    option = read.nextInt();
+                    switch (option){
+                        case 1:
+                            service.worstTenImdb();
+                            break;
+                        case 2:
+                            service.worstTenRotten();
+                            break;
+                    }
                     break;
                 case 3:
                     System.out.println("Movies by provider");
@@ -74,40 +76,37 @@ public class PrincipalMain {
 
                     switch (option) {
                         case 1:
-                            //readFile.read();
-                            viewShowNetflix.showNetflix();
+                            service.moviesNetflix();
                             break;
-                            /*case 2:
-                                ReadFile.read(file);
-                                ReadFile.showHulu();
+                            case 2:
+                              service.moviesHulu();
                                 break;
                             case 3:
-                                ReadFile.read(file);
-                                ReadFile.showPrimeVideo();
+                                service.moviesPrimeVideo();
                                 break;
                             case 4:
-                                ReadFile.read(file);
-                                ReadFile.showDisneyPlus();
+                                service.moviesDisneyPlus();
                                 break;
                             case 5:
-                                ReadFile.read(file);
-                                ReadFile.showType();
-                                break;*/
-
-
+                                service.moviesType();
+                                break;
                             default:
                                 System.out.println("Enter a valid option");
-                    }
-                    break;
+                        }
+                        break;
 
-                        case 4:
-                            System.out.println("We wait for you back");
+                    case 4:
+                        service.mostRankingNetflix();
+                        break;
 
-                            exit = true;
-                            break;
+                    case 5:
+                        System.out.println("We wait for you back");
+                        exit = true;
+                        break;
 
-                        default:
-                            System.out.println("Only number from 1 to 4");
+
+                    default:
+                        System.out.println("Only number from 1 to 4");
                     }
             }
 
