@@ -13,10 +13,10 @@ import java.nio.file.Paths;
 
 public class ReadFile  {
 
-    CSVParser csvParser ;
-    String file = System.getenv("Moviefile");
+    private CSVParser csvParser ;
+    private final String file = System.getenv("Moviefile");
 
-    public  void read() {
+    public  CSVParser read() {
 
 
        try {
@@ -31,17 +31,15 @@ public class ReadFile  {
 
        } catch (IOException e) {
            System.out.println("");
-           System.out.println("No se encuentra el archivo " + e.getMessage());
+           System.out.println("No se e ncuentra el archivo " + e.getMessage());
 
        }
 
+        return csvParser;
 
    }
 
-    public CSVParser getCsvParser() {
 
-        return csvParser;
-    }
 
 
 

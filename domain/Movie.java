@@ -1,6 +1,6 @@
 package edu.learning.johan.app.domain;
 
-public class MoviesDescription {
+public class Movie {
 
     private String index;
     private String id;
@@ -20,9 +20,10 @@ public class MoviesDescription {
     private String language;
     private String runtime;
 
-    public MoviesDescription(String index,String title, String imdb, String rottentomatoes ,
-                             String netflix,String hulu,String primeVideo,String disneyPlus,
-                             String type,String age ) {
+    //Construct
+    public Movie(String index, String title, String imdb, String rottentomatoes ,
+                 String netflix, String hulu, String primeVideo, String disneyPlus,
+                 String type, String age, String runtime ) {
         this.imdb = imdb;
         this.rottenTomatoes = rottentomatoes;
         this.index = index;
@@ -33,6 +34,7 @@ public class MoviesDescription {
         this.disneyPlus = disneyPlus;
         this.type = type;
         this.age = age;
+        this.runtime = runtime;
     }
 
         //Getters
